@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>API Fun: Affirmations</title>
     <script>
-      function getAffirmation1() {
+      function getAffirmation2() {
         fetch("https://quotes.rest/qod.json?category=inspire", {
           method: "GET",
           mode: "cors",
@@ -20,16 +20,18 @@
           });
       }
 
+      function getAffirmations() {
+        getAffirmation2();
+      }
     </script>
   </head>
-  <body onload="getAffirmation1()" style="text-align: center">
+  <body onload="getAffirmations()" style="text-align: center">
     Some affirmations to start your day:
-    <div id="affirmation1"></div>
-
+    <div id="affirmation2"></div>
     <div>
       <ul style="list-style-type: none">
         <li>The API returns random affirmations.</li>
-        <li>The API can be found at https://www.affirmations.dev/</li>
+        <li>The API was found at https://github.com/public-apis/public-apis</li>
         <li>This API generator uses the option of an affirmation generator</li>
         <li>
           This API would be helpful for a) someone who wants to implement daily
