@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>API Fun: Affirmations</title>
+    <script>
+      function getAffirmation1() {
+        fetch("https://quotes.rest/qod.json?category=inspire", {
+          method: "GET",
+          mode: "cors",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            document.getElementById("affirmation2").innerHTML =
+              data.contents.quotes[0].quote;
+          })
+          .catch((error) => {
+            console.error("Error", error);
+          });
+      }
+
+    </script>
+  </head>
+  <body onload="getAffirmation1()" style="text-align: center">
+    Some affirmations to start your day:
+    <div id="affirmation1"></div>
+
+    <div>
+      <ul style="list-style-type: none">
+        <li>The API returns random affirmations.</li>
+        <li>The API can be found at https://www.affirmations.dev/</li>
+        <li>This API generator uses the option of an affirmation generator</li>
+        <li>
+          This API would be helpful for a) someone who wants to implement daily
+          affirmations into their routine and b) a website for someone to share
+          affirmations with their site visitors
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
